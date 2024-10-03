@@ -1,13 +1,22 @@
-import './App.css'
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import MobileNavigation from "./components/MobileNavigation";
 
 function App() {
-  return (
-    <>
-      <div className='bg-red-500'>
-        <h4>Hello</h4>
-      </div>
-    </>
-  )
+	return (
+		<>
+			<main className="pb-14 lg:pb-0">
+				<Header />
+				<div className="pt-16">
+					<Outlet />
+				</div>
+				<Footer />
+				<MobileNavigation />
+			</main>
+		</>
+	);
 }
 
-export default App
+export default App;
