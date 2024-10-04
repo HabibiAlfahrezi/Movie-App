@@ -5,7 +5,6 @@ import ExplorePage from "../pages/ExplorePage";
 import DetailPage from "../pages/DetailPage";
 import SearchPage from "../pages/SearchPage";
 
-
 const router = createBrowserRouter([
     {
         path: "/",

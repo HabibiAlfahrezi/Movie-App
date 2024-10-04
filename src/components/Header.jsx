@@ -10,7 +10,9 @@ const Header = () => {
     const navigate  = useNavigate()
 	
     useEffect(() => {
-        navigate("/search?q=" + searchInput);
+		if(searchInput){
+			navigate("/search?q=" + searchInput);
+		}
     }, [searchInput])
 
 
@@ -22,7 +24,7 @@ const Header = () => {
 				</Link>
 
 				<nav className="hidden lg:flex items-center gap-1 ml-5">
-					{NavigationList.map((navList, index) => {
+					{NavigationList.map((navList) => {
 						return (
 							<div key={navList.label}>
 								<NavLink

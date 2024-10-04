@@ -1,7 +1,10 @@
+import HomeBanner from "../components/HomeBanner"
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      <HomeBanner/>
+    </div>
   )
 }
 

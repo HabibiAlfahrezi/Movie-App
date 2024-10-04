@@ -5,7 +5,7 @@ const MobileNavigation = () => {
 	return (
 		<section className="lg:hidden h-14 bg-neutral-600 bg-opacity-40 fixed bottom-0 w-full">
 			<div className="flex h-full items-center justify-between text-neutral-500">
-				{MobileNavigationList.map((navList, index) => {
+				{MobileNavigationList.map((navList) => {
 					return (
 						<NavLink
 							key={navList.label + "MobileNavigation"}
