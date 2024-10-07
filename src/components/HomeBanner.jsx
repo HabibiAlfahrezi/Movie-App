@@ -25,19 +25,21 @@ const HomeBanner = () => {
 			if (currentImage < bannerData.length - 1) {
 				handleNext();
 			} else {
-				setCurrentImage(0);
+				setCurrentImage(0)
 			}
 		}, 5000);
 
 		return () => {
 			clearInterval(interval);
 		};
-	}, [bannerData, imageURL]);
+	}, [bannerData, imageURL, currentImage]);
+
+
 	return (
 		<section className="w-full h-full">
 			<div className="flex min-h-full max-h-[95vh] overflow-hidden">
 				{bannerData.map((data, index) => {
-					console.log("data", data);
+
 					return (
 						<div
 							key={index}
@@ -66,7 +68,7 @@ const HomeBanner = () => {
 							<div className="absolute top-0 w-full h-full bg-gradient-to-t from-neutral-900 to-transparent"></div>
 
 							<div className="container mx-auto px-4 lg:px-16">
-								<div className=" absolute bottom-0 max-w-md lg:px-3">
+								<div className=" absolute bottom-0 max-w-md ">
 									<h2 className="font-bold text-2xl lg:text-4xl text-white drop-shadow-2xl">
 										{data?.name || data?.title}
 									</h2>

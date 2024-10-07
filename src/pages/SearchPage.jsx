@@ -5,7 +5,11 @@ const SearchPage = () => {
     console.log("location", location);
     
   return (
-    <div>SearchPage</div>
+    <div className="pt-16">
+      <div className="container mx-auto">
+        <h2>Search Result</h2>
+      </div>
+    </div>
   )
 }
 

@@ -8,8 +8,6 @@ import { Provider } from "react-redux";
 import { store } from "./store/store.js";
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
-
-// eslint-disable-next-line no-undef
 axios.defaults.headers.common["Authorization"] = `Bearer ${
 	import.meta.env.VITE_ACCESS_TOKEN
 }`;

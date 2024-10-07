@@ -3,7 +3,7 @@ import { MobileNavigationList } from "../data/Navigation";
 
 const MobileNavigation = () => {
 	return (
-		<section className="lg:hidden h-14 bg-neutral-600 bg-opacity-40 fixed bottom-0 w-full">
+		<section className="lg:hidden h-14 bg-black bg-opacity-65 fixed bottom-0 backdrop-blur-md w-full z-10">
 			<div className="flex h-full items-center justify-between text-neutral-500">
 				{MobileNavigationList.map((navList) => {
 					return (
