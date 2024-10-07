@@ -17,7 +17,7 @@ const Header = () => {
 
 
 	return (
-		<header className="fixed top-0 w-full h-16 bg-neutral-600 bg-opacity-75">
+		<header className="fixed top-0 w-full h-16 bg-neutral-600 bg-opacity-75 z-40">
 			<div className="container mx-auto px-4 lg:px-16 flex items-center h-full">
 				<Link to={'/'} className="w-10">
 					<img src={logo} alt="logo" />
