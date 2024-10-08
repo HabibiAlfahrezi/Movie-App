@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/stripe.png";
 import icon from "../assets/user.jpg";
 import { CiSearch } from "react-icons/ci";
@@ -6,20 +6,22 @@ import { useEffect, useState } from "react";
 import { NavigationList } from "../data/Navigation";
 
 const Header = () => {
-    const [searchInput, setSearchInput] = useState('');
-    const navigate  = useNavigate()
-	
-    useEffect(() => {
-		if(searchInput){
+	const location = useLocation();
+	const removeSpace = location?.search?.slice(3)?.split("%20")?.join(" ");
+	const [searchInput, setSearchInput] = useState(removeSpace);
+	const navigate = useNavigate();
+
+
+	useEffect(() => {
+		if (searchInput) {
 			navigate("/search?q=" + searchInput);
 		}
-    }, [searchInput])
-
+	}, [searchInput]);
 
 	return (
 		<header className="fixed top-0 w-full h-16 bg-black bg-opacity-60 z-40">
 			<div className="container mx-auto px-4 lg:px-16 flex items-center h-full">
-				<Link to={'/'} className="w-10">
+				<Link to={"/"} className="w-10">
 					<img src={logo} alt="logo" />
 				</Link>
 
@@ -43,17 +45,20 @@ const Header = () => {
 				</nav>
 
 				<div className="ml-auto flex items-center gap-5">
-					<form className="flex items-center gap-2" onSubmit={(e) => {
-                        e.preventDefault()
-                    }}>
-						<input 
+					<form
+						className="flex items-center gap-2"
+						onSubmit={(e) => {
+							e.preventDefault();
+						}}
+					>
+						<input
 							type="text"
 							placeholder="Search here..."
 							className="bg-transparent px-4 py-1 border-none outline-none hidden lg:block"
-                            value={searchInput}
-                            onChange={(e) => {
-                                setSearchInput(e.target.value)
-                            }} 
+							value={searchInput}
+							onChange={(e) => {
+								setSearchInput(e.target.value);
+							}}
 						/>
 						<button className="text-2xl text-white">
 							<CiSearch />

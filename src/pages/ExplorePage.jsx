@@ -47,11 +47,11 @@ const ExplorePage = () => {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 	return (
-		<div className="pt-16 px-4 lg:px-16">
+		<div className="py-16 px-4 lg:px-16">
 			<h3 className="capitalize text-lg lg:text-xl font-semibold my-3">
 				Popular {params.explore}
 			</h3>
-			<div className="grid grid-cols-[repeat(auto-fit,250px)] gap-6">
+			<div className="grid grid-cols-[repeat(auto-fit,250px)] gap-6 justify-center lg:justify-start">
 				{data.map((data, index) => {
 					return <Card key={data.id + "ExploreSection" + index} data={data} mediatype={params.explore}/>;
 				})}

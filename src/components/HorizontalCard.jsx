@@ -15,7 +15,7 @@ const HorizontalCard = ({ data = [], heading, trending, mediaType}) => {
 
 	return (
 		<div className="container mx-auto px-4 lg:px-16 my-10">
-			<h2 className="text-xl lg:text-2xl font-bold mb-3 text-white">
+			<h2 className="text-xl lg:text-2xl font-bold mb-3 text-white capitalize">
 				{heading}
 			</h2>
 			<div className=" relative">
@@ -51,7 +51,7 @@ const HorizontalCard = ({ data = [], heading, trending, mediaType}) => {
 HorizontalCard.propTypes = {
     data: PropTypes.array, 
     heading: PropTypes.string.isRequired,
-    trending: PropTypes.bool.isRequired,
-    mediaType: PropTypes.string.isRequired
+    trending: PropTypes.bool,
+    mediaType: PropTypes.string
 }
 export default HorizontalCard;
